@@ -1,4 +1,4 @@
-using CrystalClearRecruitment_FinalProject.Data;
+using CrystalClearRecruitment_FinalProject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
