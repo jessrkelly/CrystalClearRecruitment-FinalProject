@@ -1,0 +1,76 @@
+﻿@model Job
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="~/css/jobs.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>Applications</h1>
+        </div>
+    </header>
+    <div class="container table-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Full Name</th>
+                                    <th scope="col">Contact No</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">CV Status</th>
+                                    <th scope="col">Download CV</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model.jobSeekers != null && Model.jobSeekers.Count > 0)
+                                {
+                                    int x = 0;
+                                    @foreach (var obj in Model.jobSeekers)
+                                    {
+                                        x++;
+                                        <tr>
+                                            <th scope="row">@x</th>
+                                            <td>@obj.FullName</td>
+                                            <td>@obj.ContactNo</td>
+                                            <td>@obj.Email</td>
+                                            <td>@obj.CVStatus</td>
+                                            <td>
+                                                @if (obj.CVPath != null)
+                                                {
+                                                    <a href="~/@obj.CVPath" download class="button-download">
+                                                        <img src="~/images/download.png" alt="Download CV" width="30" height="30" />
+                                                    </a>
+                                                }
+                                            </td>
+                                            <td>
+                                                <a class="button-success button-sm" asp-action="CVApproveDecline" asp-route-appid="2" asp-route-jobid="@Model.JobID" asp-route-jsId="@obj.Id">Approve</a>
+                                                <a class="button-danger button-sm" asp-action="CVApproveDecline" asp-route-appid="3" asp-route-jobid="@Model.JobID" asp-route-jsId="@obj.Id">Decline</a>
+                                                <a class="button-profile button-sm" asp-action="Profile" asp-controller="JobSeekers" asp-route-id="@Model.jobSeekers[0].appUsers.UserName">View Profile</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="7" class="text-center">No applications found.</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

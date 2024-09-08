@@ -1,0 +1,65 @@
+﻿@model List<JobSeekers>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/jobs.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>Job Applications</h1>
+        </div>
+    </header>
+    <div class="container table-container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Job Title</th>
+                                    <th scope="col">Company Name</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col" class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.Count > 0)
+                                {
+                                    int x = 0;
+                                    @foreach (var obj in Model)
+                                    {
+                                        x++;
+                                        <tr>
+                                            <th scope="row">@x</th>
+                                            <td>@obj.job[0].JobTitle</td>
+                                            <td>@obj.job[0].CompanyName</td>
+                                            <td>@obj.CVStatus</td>
+                                            <td class="text-right">
+                                                <a class="button-info button-sm" asp-route-jobid="@obj.job[0].JobID" asp-action="view">Job Detail</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="5" class="text-center">No job applications found.</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿@model List<Job>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jobs - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="~/css/jobs.css" asp-append-version="true" />
+    <script>
+        function confirmDelete() {
+            return confirm('Confirm before Deleting.');
+        }
+    </script>
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>Jobs</h1>
+        </div>
+    </header>
+    <div class="container table-container">
+        <a class="button-info mb-3" asp-action="Add">Post a Job</a>
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Posted Date</th>
+                    <th scope="col">Job Title</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Contact No</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <th scope="row">@(i + 1)</th>
+                        <td>@Model[i].PostedDate</td>
+                        <td>@Model[i].JobTitle</td>
+                        <td>@Model[i].CompanyName</td>
+                        <td>@Model[i].ContactNo</td>
+                        <td>@Model[i].Salary</td>
+                        <td>
+                            <a class="button-info button-sm" asp-action="edit" asp-route-id="@Model[i].JobID">Edit</a>
+                            <a class="button-danger button-sm" asp-action="delete" asp-route-id="@Model[i].JobID" onclick="return confirmDelete()">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

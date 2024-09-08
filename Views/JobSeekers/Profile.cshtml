@@ -1,0 +1,132 @@
+﻿@model JobSeekers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="~/css/jobs.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>Your Profile</h1>
+        </div>
+    </header>
+    <div class="container form-container">
+        <form asp-action="ProfilePOST" method="post" enctype="multipart/form-data">
+            <input asp-for="Id" hidden />
+            <input asp-for="appUsersId" hidden />
+            <div class="row">
+                <!-- Sidebar with Avatar and About Section -->
+                <div class="col-lg-3">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="avatar">
+                                @if (Model?.profileImage == null)
+                                {
+                                    <img src="~/images/OIP.jpg" alt="Avatar" class="rounded img-fluid" style="max-width: 150px;">
+                                }
+                                else
+                                {
+                                    <img src="~/@Model.profileImage" alt="Avatar" class="rounded img-fluid" style="max-width: 150px;">
+                                }
+                            </div>
+                            @if (Model != null)
+                            {
+                                <h5 class="name mt-3">@Model.FullName</h5>
+                                <h6 class="email">@Model.Email</h6>
+                            }
+                            <div class="about mt-4">
+                                <h5>About</h5>
+                                <textarea class="form-control border-success" asp-for="About" rows="4"></textarea>
+                                <span asp-validation-for="About" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Section -->
+                <div class="col-lg-9">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="text-primary">Personal Details</h6>
+                            <div class="row">
+                                <!-- First Name -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="FirstName">First Name</label>
+                                        <input type="text" class="form-control border-success" asp-for="FirstName" required>
+                                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Last Name -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="LastName">Last Name</label>
+                                        <input type="text" class="form-control border-success" asp-for="LastName" required>
+                                        <span asp-validation-for="LastName" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="ContactNo">Phone</label>
+                                        <input type="text" class="form-control border-success" asp-for="ContactNo" required>
+                                        <span asp-validation-for="ContactNo" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="Email">Email</label>
+                                        <input type="email" class="form-control border-success" asp-for="Email" required>
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <!-- CV Upload -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="CVPath">CV</label>
+                                        <input type="file" class="form-control border-success" asp-for="CVPath">
+                                        <span asp-validation-for="CVPath" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <!-- Profile Image Upload -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label for="profileImage">Profile Image</label>
+                                        <input type="file" class="form-control border-success" asp-for="profileImage">
+                                        <span asp-validation-for="profileImage" class="text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Address Section -->
+                            <h6 class="mt-3 text-primary">Address</h6>
+                            <div class="form-group">
+                                <label for="Address">Street</label>
+                                <textarea class="form-control border-success" asp-for="Address" rows="2"></textarea>
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+
+                            <!-- Submit and Cancel Buttons -->
+                            <div class="text-right">
+                                <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("Index", "Home")'">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

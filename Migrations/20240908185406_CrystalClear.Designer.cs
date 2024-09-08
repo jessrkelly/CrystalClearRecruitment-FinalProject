@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrystalClearRecruitment_FinalProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240906172614_abc")]
-    partial class abc
+    [Migration("20240908185406_CrystalClear")]
+    partial class CrystalClear
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -102,16 +102,16 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ee45c930-fd83-4f81-bd50-e8d4319b6595",
+                            ConcurrencyStamp = "ac79ddee-248d-4557-8848-60c92a38186d",
                             Email = "admin@abc.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
                             LastName = "Ofoedu",
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@abc.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHywFez6ChOtftmbWvI/6scUGqxjS1YcAHFvRwzWLLSg5+tvuX6wYQtkPxOY+ah6EA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFzJ40o7lQNEUCRVbwIBFgFBv3h67Ne1nTc1BIx7wKMF5Laoacn4RorXqm+4wcYjfw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "1ef52846-97b2-4b70-8c16-7bb0ca2f11af",
+                            SecurityStamp = "63e56453-0ac4-4833-9809-cf479e301976",
                             TwoFactorEnabled = false,
                             UserName = "admin@abc.com"
                         });
@@ -195,7 +195,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategouryID")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("City")
@@ -243,12 +243,9 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                     b.Property<int?>("Status")
                         .HasColumnType("int");
 
-                    b.Property<int>("categoriesCategoryId")
-                        .HasColumnType("int");
-
                     b.HasKey("JobID");
 
-                    b.HasIndex("categoriesCategoryId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("job");
                 });
@@ -502,7 +499,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 {
                     b.HasOne("CrystalClearRecruitment_FinalProject.Models.Category", "categories")
                         .WithMany()
-                        .HasForeignKey("categoriesCategoryId")
+                        .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

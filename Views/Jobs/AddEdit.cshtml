@@ -1,0 +1,130 @@
+﻿@model Job
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Details - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="~/css/jobs.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <h1>Job Details</h1>
+        </div>
+    </header>
+    <div class="container form-container">
+        <form asp-action="@ViewBag.action">
+            <input asp-for="PostedDate" hidden />
+            <input asp-for="Status" hidden />
+            <input asp-for="JobID" hidden />
+            <input asp-for="AddUser" hidden />
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="JobTitle">Job Title</label>
+                        <input asp-for="JobTitle" class="form-control border border-success">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="EmploymentType">Employment Type</label>
+                        <select class="form-control border border-success" asp-for="EmploymentType">
+                            <option value="Part-time">Part-time</option>
+                            <option value="Full time">Full time</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="CompanyName">Company Name</label>
+                        <input asp-for="CompanyName" class="form-control border border-success">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="Salery">Salary</label>
+                        <input asp-for="Salary" class="form-control border border-success">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="City">City</label>
+                        <input asp-for="City" class="form-control border border-success">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Country">Country</label>
+                        <input asp-for="Country" class="form-control border border-success">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Location">Location</label>
+                <textarea class="form-control border border-success" asp-for="Location" rows="3"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="ContactNo">Contact No</label>
+                        <input asp-for="ContactNo" class="form-control border border-success">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input asp-for="Email" class="form-control border border-success">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <textarea class="form-control border border-success" asp-for="Description" rows="3"></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="CategouryId">Employment Category</label>
+                        @Html.DropDownListFor(a => a.CategoryId, new SelectList(ViewBag.Category, "CategoryId", "Name"), new { @class = "form-control border border-success" })
+                    </div>
+                </div>
+                @if (ViewBag.view != null)
+                {
+                    <div class="col-md-6">
+                        <label>&nbsp;</label> <!-- To align with the above input -->
+                        <a class="button-primary form-control" asp-action="Apply" asp-route-jobid="@Model.JobID">Apply</a>
+                    </div>
+                }
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    @if (ViewBag.view == null)
+                    {
+                        @if (ViewBag.action == "EditPOST")
+                        {
+                            <button class="button-info form-control">Update</button>
+                        }
+                        else
+                        {
+                            <button class="button-info form-control">Add</button>
+                        }
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,4 +1,89 @@
-﻿@page
-@model CrystalClearRecruitment_FinalProject.Views.Home.AboutModel
-@{
+﻿@{
+    ViewData["Title"] = "About Us";
 }
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+<div class="container mt-4">
+    <div class="text-center">
+        <h1 class="display-4">About Crystal Clear Recruitment</h1>
+        <p class="lead">Connecting Talent with Opportunities</p>
+        <hr />
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card shadow-sm rounded p-4">
+                <h2 class="text-deep-purple">Our Mission</h2>
+                <p>At JobSeek, our mission is to bridge the gap between job seekers and employers. We aim to provide a seamless and efficient platform that helps individuals find their dream jobs and companies find the right talent.</p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+            <div class="card shadow-sm rounded p-4">
+                <h2 class="text-deep-purple">Our Services</h2>
+                <ul>
+                    <li><strong>Job Search:</strong> Browse thousands of job listings from various industries and locations.</li>
+                    <li><strong>Resume Building:</strong> Create a professional resume with our easy-to-use tools.</li>
+                    <li><strong>Application Management:</strong> Keep track of your job applications and responses from employers.</li>
+                    <li><strong>Employer Services:</strong> Post job openings, search for qualified candidates, and manage your hiring process.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4 mb-6 text-center">
+        <div class="col-12">
+            <h2 class="text-deep-purple">Our Team</h2>
+            <p>We are a group of dedicated professionals with a passion for helping people achieve their career goals. Our team consists of experts in recruitment, technology, and customer service, all working together to provide the best experience for our users.</p>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 mb-5">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="~/images/team1.jpg" class="img-fluid rounded-circle" alt="Jane Doe">
+                                <h5>Jane Doe</h5>
+                                <p>CEO & Founder</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>"Passionate about connecting talent with opportunities and making a difference."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 mb-5">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="~/images/team2.jpg" class="img-fluid rounded-circle" alt="John Smith">
+                                <h5>John Smith</h5>
+                                <p>Chief Technology Officer</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>"Innovating the recruitment industry with cutting-edge technology."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 mb-5">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="~/images/team3.jpg" class="img-fluid rounded-circle" alt="Mary Johnson">
+                                <h5>Mary Johnson</h5>
+                                <p>Head of Recruitment</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>"Dedicated to finding the perfect match between candidates and employers."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <h2 class="text-deep-purple">Contact Us</h2>
+            <p>We would love to hear from you. Whether you have a question, feedback, or need support, please get in touch with us.</p>
+            <p><strong>Email:</strong> support@crystalclear.com</p>
+            <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+            <p><strong>Address:</strong> 123 Crystal Clear Lane, Employment City, Jobland, 12345</p>
+        </div>
+    </div>
+</div>

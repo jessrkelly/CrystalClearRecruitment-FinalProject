@@ -1,0 +1,139 @@
+﻿@{
+    ViewData["Title"] = "Interview Tips & Tricks";
+}
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+
+<div class="interview-hero">
+    <div class="interview-hero-overlay"></div>
+    <div class="interview-hero-content">
+        <h1>Interview Tips & Tricks</h1>
+        <p>Get ready for your interview with these essential tips, frequently asked questions, and strategies to succeed.</p>
+    </div>
+</div>
+
+<!-- Importance of prep section -->
+<div class="text-center mb-5">
+    <h2 class="text-deep-purple">The Importance of Interview Preparation</h2>
+    <p class="lead-sm"><b>Preparation is key to feeling confident, standing out, and making a great impression during an interview. Below are frequently asked interview questions, answers, and tips on overcoming common challenges.</b></p>
+</div>
+
+<!-- Accordion/Tips section https://www.w3schools.com/howto/howto_js_accordion.asp -->
+<div class="interview-content-container">
+    <!-- Accordion for Interview Questions -->
+    <div class="accordion-section">
+        <div class="accordion" id="faqAccordion">
+            <!-- FAQ 1: Strengths -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingOne">
+                    <h3>
+                        <button class="button-link text-deep-purple d-flex align-items-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            What are your strengths? <i class="fas fa-chevron-down ml-auto"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Your answer should reflect your skills and experience that match the job description. Highlight a few key strengths and provide examples of how you've demonstrated these in the workplace.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ2: weaknessess -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingTwo">
+                    <h3>
+                        <button class="button-link text-deep-purple d-flex align-items-center" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What are your weaknesses? <i class="fas fa-chevron-down ml-auto"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Mention a genuine weakness but follow up with how you are actively working to improve it. This shows self-awareness and a commitment to personal development.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ3: Planss -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingThree">
+                    <h3>
+                        <button class="button-link text-deep-purple d-flex align-items-center" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Where do you see yourself in five years? <i class="fas fa-chevron-down ml-auto"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Your response should reflect your career ambitions and align with the company’s goals. Mention how the position you're applying for fits into your long-term plan.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4: Challanges facesd -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingFour">
+                    <h3>
+                        <button class="button-link text-deep-purple d-flex align-items-center" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Tell me about a time you overcame a challenge. <i class="fas fa-chevron-down ml-auto"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Use the STAR method (Situation, Task, Action, Result) to structure your answer. Focus on a specific example where you overcame an obstacle and explain the positive outcome you achieved.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5: Why Hire? -->
+            <div class="card mb-3">
+                <div class="card-header" id="headingFive">
+                    <h3>
+                        <button class="button-link text-deep-purple d-flex align-items-center" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Why should we hire you? <i class="fas fa-chevron-down ml-auto"></i>
+                        </button>
+                    </h3>
+                </div>
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Highlight your key qualifications, unique experiences, and skills that make you an excellent fit for the role. Show how you will add value to the company and stand out from other candidates.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tips Section  Nerves -->
+    <div class="tips-section">
+        <h2 class="text-deep-purple">Overcoming Interview Nerves</h2>
+        <p>Nervousness before an interview is natural, but these strategies can help you manage it:</p>
+        <ul>
+            <li><strong>Practise deep breathing:</strong> Slow, deep breaths can calm your nerves.</li>
+            <li><strong>Prepare and rehearse:</strong> The more prepared you are, the more confident you'll feel.</li>
+            <li><strong>Visualise success:</strong> Imagine yourself doing well in the interview.</li>
+            <li><strong>Stay positive:</strong> Remember, an interview is a conversation, not an interrogation.</li>
+        </ul>
+        <img src="/images/jobnerves2.jpg" alt="Nervous job candidates" class="img-fluid rounded mt-3">
+    </div>
+</div>
+
+<!-- Day of Interview Tips Section -->
+<div class="tips-section on-day-of-interview">
+    <div class="content-container">
+        <div class="interview-tips">
+            <h2 class="text-deep-purple">On the Day of the Interview</h2>
+            <ul>
+                <li><strong>Get a good night's sleep:</strong> Being well-rested will help you stay sharp.</li>
+                <li><strong>Arrive 15 minutes early:</strong> Arriving early gives you time to compose yourself.</li>
+                <li><strong>Dress appropriately:</strong> Make sure to wear professional attire that fits the company culture.</li>
+                <li><strong>Bring necessary materials:</strong> Bring extra copies of your CV, references, and other relevant documents.</li>
+            </ul>
+        </div>
+        <div class="interview-checklist">
+            <img src="/images/checklist.jpg" alt="Interview Checklist" class="checklist-img">
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

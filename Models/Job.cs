@@ -19,7 +19,7 @@ namespace CrystalClearRecruitment_FinalProject.Models
         public string CompanyName { get; set; }
         public int? Status { get; set; }
         public string? AddUser { get; set; }
-        public int CategouryID { get; set; }
+        public int CategoryId { get; set; }
         public string City { get; set; }    
         public string Country { get; set; }
         public DateTime PostedDate { get; set; }    

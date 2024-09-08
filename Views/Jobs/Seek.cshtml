@@ -1,0 +1,53 @@
+﻿@model List<Job>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="~/css/jobs.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Inspiring working lives</h1>
+            <p>Start your job search</p>
+        </div>
+    </div>
+
+    <div class="search-section">
+        <form asp-action="seekPOST" class="form-inline">
+            <input name="Title" class="form-control" placeholder="Enter Keywords e.g. Job Title" />
+            <input name="City" class="form-control" placeholder="Choose Location(s)" />
+            <button type="submit" class="button-warning">Search</button>
+        </form>
+    </div>
+
+    <div class="container card-container">
+        <div class="row">
+            @foreach (var obj in @Model)
+            {
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-header">
+                                <span class="avatar-text">@obj.JobTitle.Substring(0, 1).ToUpper()</span>
+                                <div>
+                                    <h4 class="h5">@obj.JobTitle</h4>
+                                    <span class="badge badge-secondary">@obj.EmploymentType</span>
+                                    <span class="badge badge-success">€@obj.Salary</span>
+                                </div>
+                            </div>
+                            <p class="mt-2">@obj.Description</p>
+                            <div class="text-lg-end">
+                                <a asp-action="View" asp-route-jobid="@obj.JobID" class="button-warning">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

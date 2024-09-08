@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CrystalClearRecruitment_FinalProject.Migrations
 {
     /// <inheritdoc />
-    public partial class abc : Migration
+    public partial class CrystalClear : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -244,19 +244,18 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: true),
                     AddUser = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CategouryID = table.Column<int>(type: "int", nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PostedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CVstatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    categoriesCategoryId = table.Column<int>(type: "int", nullable: false)
+                    CVstatus = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_job", x => x.JobID);
                     table.ForeignKey(
-                        name: "FK_job_categories_categoriesCategoryId",
-                        column: x => x.categoriesCategoryId,
+                        name: "FK_job_categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "categories",
                         principalColumn: "CategoryId",
                         onDelete: ReferentialAction.Cascade);
@@ -298,7 +297,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "ee45c930-fd83-4f81-bd50-e8d4319b6595", "admin@abc.com", true, "Admin", "Ofoedu", false, null, null, "admin@abc.com", "AQAAAAIAAYagAAAAEHywFez6ChOtftmbWvI/6scUGqxjS1YcAHFvRwzWLLSg5+tvuX6wYQtkPxOY+ah6EA==", null, false, "1ef52846-97b2-4b70-8c16-7bb0ca2f11af", false, "admin@abc.com" });
+                values: new object[] { "1", 0, "ac79ddee-248d-4557-8848-60c92a38186d", "admin@abc.com", true, "Admin", "Ofoedu", false, null, null, "admin@abc.com", "AQAAAAIAAYagAAAAEFzJ40o7lQNEUCRVbwIBFgFBv3h67Ne1nTc1BIx7wKMF5Laoacn4RorXqm+4wcYjfw==", null, false, "63e56453-0ac4-4833-9809-cf479e301976", false, "admin@abc.com" });
 
             migrationBuilder.InsertData(
                 table: "categories",
@@ -364,9 +363,9 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_job_categoriesCategoryId",
+                name: "IX_job_CategoryId",
                 table: "job",
-                column: "categoriesCategoryId");
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_JobJobSeekers_jobSeekersId",

@@ -42,7 +42,7 @@ namespace CrystalClearRecruitment_FinalProject.Controllers
             _categoryRespository.Save();
             return RedirectToAction("Category");
         }
-        public IActionResult CategouryDelete(int id)
+        public IActionResult CategoryDelete(int id)
         {
             _categoryRespository.CategoryDelete(id);
             _categoryRespository.Save();
