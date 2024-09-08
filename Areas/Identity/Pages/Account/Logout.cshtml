@@ -1,0 +1,77 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+            padding: 2rem;
+        }
+
+        .text-deep-purple {
+            color: #4b0082; /* Deep purple color */
+        }
+
+        .btn-deep-purple {
+            background-color: #4b0082;
+            color: white;
+            border: none;
+        }
+
+            .btn-deep-purple:hover {
+                background-color: #3a0066;
+                color: white;
+            }
+
+        header h1 {
+            font-size: 2rem;
+            color: #4b0082;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center">
+        <div class="card text-center">
+            <header>
+                <h1>@ViewData["Title"]</h1>
+                @{
+                    if (User.Identity?.IsAuthenticated ?? false)
+                    {
+                        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                            <button type="submit" class="btn btn-deep-purple btn-lg">Click here to Logout</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <p>You have successfully logged out of Crystal Clear Recruitment.</p>
+                    }
+                }
+            </header>
+        </div>
+    </div>
+</body>
+</html>

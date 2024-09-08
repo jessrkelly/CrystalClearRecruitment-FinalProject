@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <None Include="Views\JobSeekers\Index.cshtml" />
-    <None Include="Views\JobSeekers\Profile.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

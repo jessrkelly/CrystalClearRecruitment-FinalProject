@@ -1,2 +1,298 @@
 ﻿body {
+    background: #f8f9fa;
+}
+
+/* Page Header */
+.page-header {
+    background: #4b0082;
+    color: white;
+    padding: 2em 0;
+    text-align: center;
+}
+
+    .page-header h1, .page-header h2 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+
+/* Form and Container Styles */
+.form-container, .table-container {
+    margin-top: 2em;
+    padding: 2em;
+    background: white;
+    border-radius: 0.5em;
+    box-shadow: 0 0.4em 0.8em rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.button-info,
+.button-success,
+.button-warning,
+.button-primary,
+.button-danger,
+.button-profile {
+    border: none;
+    color: #fff;
+    padding: 0.8em 1.6em;
+    font-size: 1em;
+    border-radius: 0.5em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, color 0.3s;
+    position: relative; /* Ensure button is properly positioned */
+    z-index: 10; /* Ensure button appears above any overlapping content */
+    visibility: visible; /* Ensure button is visible */
+}
+
+/* Specific Button Colors */
+.button-info, .button-primary {
+    background: #4b0082; /* Default purple buttons */
+}
+
+.button-warning {
+    background: #4b0082; /* Purple background */
+    border: 2px solid #4b0082; /* Purple border */
+    color: #fff;
+    padding: 0.5em 1.2em; /* Slightly smaller padding */
+    font-size: 0.9em; /* Slightly smaller font size */
+    border-radius: 0.5em; /* Keep rounded corners */
+    display: inline-block;
+    transition: background 0.3s, color 0.3s, border-color 0.3s; /* Add smooth transition for hover effects */
+}
+
+
+.button-success {
+    background: #28a745; /* Green for Approve */
+}
+
+.button-danger {
+    background: #dc3545; /* Red for Decline */
+}
+
+.button-profile {
+    background: #6f42c1; /* Purple for View Profile */
+}
+
+/* Hover States */
+.button-info:hover,
+.button-primary:hover {
+    background: #3a006d;
+}
+
+.button-success:hover {
+    background: #218838;
+}
+
+.button-danger:hover {
+    background: #c82333;
+}
+
+.button-profile:hover {
+    background: #5a32a8;
+}
+
+.button-warning:hover {
+    background: #3a006d;
+    border-color: #3a006d;
+    color: #fff;
+}
+/* Remove underline and text color change on hover for all buttons */
+.button-info:hover,
+.button-success:hover,
+.button-warning:hover,
+.button-primary:hover,
+.button-danger:hover,
+.button-profile:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Button Sizes */
+.button-sm {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+}
+
+/* Card Styles */
+.card {
+    box-shadow: 0 1.25em 1.69em 0 rgba(0, 0, 0, 0.05);
+    border-radius: 1em;
+    margin-bottom: 1.25em;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .card:hover {
+        box-shadow: 0 1.875em 2.5em 0 rgba(0, 0, 0, 0.1);
+    }
+
+.card-body {
+    padding: 1.5em;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.avatar-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4b0082;
+    color: #fff;
+    font-weight: 700;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        vertical-align: middle;
+        border: 0.1em solid #dee2e6;
+        padding: 1em;
+    }
+
+.thead-dark th {
+    background-color: #343a40;
+    color: white;
+}
+
+/* Badge Styles */
+.badge-secondary {
+    background-color: #6c757d;
+    margin-right: 0.3em;
+}
+
+.badge-success {
+    background-color: #28a745;
+}
+
+/* Search Section */
+.search-section {
+    background: #4b0082;
+    padding: 1.25em;
+    text-align: center;
+    margin-top: -1.5em;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    .search-section form {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        max-width: 75em;
+    }
+
+    .search-section input {
+        padding: 0.625em;
+        margin: 0.3em;
+        flex: 1;
+        border-radius: 1.25em 0 0 1.25em;
+        border: none;
+        color: black;
+        background: white;
+    }
+
+    .search-section button {
+        padding: 0.625em;
+        margin: 0.3em;
+        border-radius: 0 1.25em 1.25em 0;
+        border: none;
+        background: #000080;
+        color: white;
+    }
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background-image: url('/images/searchphoto2.jpg');
+    background-size: cover;
+    background-position: top center;
+    height: 25em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Form Control Borders */
+.border-success {
+    border-color: #4b0082 !important;
+}
+/* moving View button to right on job ad */
+.card-body .button-warning {
+    float: right; /* Align the button to the right */
+    margin-top: 1em; /* Add some spacing from the content above */
+}
+
+/* Job Seekers - Profile */
+.page-header {
+    background: #4b0082;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    .page-header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background: #4b0082;
+    border: none;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background: #3a006d;
+    }
+
+.btn-secondary {
+    background: #6c757d;
+    border: none;
+    color: #fff;
+}
+
+    .btn-secondary:hover {
+        background: #5a6268;
+    }
+
+.border-success {
+    border-color: #4b0082 !important;
 }

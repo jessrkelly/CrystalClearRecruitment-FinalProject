@@ -1,0 +1,96 @@
+﻿@page
+@model ResendEmailConfirmationModel
+@{
+    ViewData["Title"] = "Resend email confirmation";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Crystal Clear Recruitment</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #eee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .card {
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-deep-purple {
+            color: #4b0082; /* Deep purple color */
+        }
+
+        .btn-deep-purple {
+            background-color: #4b0082;
+            color: white;
+            border: none;
+        }
+
+            .btn-deep-purple:hover {
+                background-color: #3a0066;
+                color: white;
+            }
+
+        .form-label {
+            font-size: 1rem;
+            color: #6c757d;
+        }
+
+        .form-control:focus {
+            border-color: #4b0082;
+            box-shadow: 0 0 0 0.2rem rgba(75, 0, 130, 0.25);
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            padding-left: 1.25rem;
+        }
+
+        .form-check-input {
+            margin-right: 0.5rem;
+        }
+
+        .form-check-label {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4">
+                    <h2 class="text-center text-deep-purple">@ViewData["Title"]</h2>
+                    <form id="account" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">Email</label>
+                            <input asp-for="Email" class="form-control" autocomplete="email" aria-required="true" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div>
+                            <button id="resend-submit" type="submit" class="w-100 btn btn-lg btn-deep-purple">Resend</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center">
+                <img src="~/images/minilogo.png" class="img-fluid" alt="Logo" style="max-width: 80%;" />
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>
+</html>
