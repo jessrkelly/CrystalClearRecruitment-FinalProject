@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CrystalClearRecruitment_FinalProject.Migrations
 {
     /// <inheritdoc />
-    public partial class CrystalClear : Migration
+    public partial class CrystalClearRec : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -68,7 +68,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "cvStatus",
+                name: "cVStatuscs",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -77,11 +77,11 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_cvStatus", x => x.Id);
+                    table.PrimaryKey("PK_cVStatuscs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "jobJobSeekersCVStatus",
+                name: "jobJobSeekersCVStatuses",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -92,7 +92,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_jobJobSeekersCVStatus", x => x.Id);
+                    table.PrimaryKey("PK_jobJobSeekersCVStatuses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -141,8 +141,8 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -186,8 +186,8 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -232,7 +232,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 name: "job",
                 columns: table => new
                 {
-                    JobID = table.Column<int>(type: "int", nullable: false)
+                    JobId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     JobTitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Salary = table.Column<int>(type: "int", nullable: false),
@@ -247,12 +247,11 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PostedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CVstatus = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    PostedDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_job", x => x.JobID);
+                    table.PrimaryKey("PK_job", x => x.JobId);
                     table.ForeignKey(
                         name: "FK_job_categories_CategoryId",
                         column: x => x.CategoryId,
@@ -265,12 +264,12 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 name: "JobJobSeekers",
                 columns: table => new
                 {
-                    JobID = table.Column<int>(type: "int", nullable: false),
+                    JobId = table.Column<int>(type: "int", nullable: false),
                     jobSeekersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_JobJobSeekers", x => new { x.JobID, x.jobSeekersId });
+                    table.PrimaryKey("PK_JobJobSeekers", x => new { x.JobId, x.jobSeekersId });
                     table.ForeignKey(
                         name: "FK_JobJobSeekers_jobSeekers_jobSeekersId",
                         column: x => x.jobSeekersId,
@@ -278,10 +277,10 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_JobJobSeekers_job_JobID",
-                        column: x => x.JobID,
+                        name: "FK_JobJobSeekers_job_JobId",
+                        column: x => x.JobId,
                         principalTable: "job",
-                        principalColumn: "JobID",
+                        principalColumn: "JobId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -297,7 +296,17 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "ac79ddee-248d-4557-8848-60c92a38186d", "admin@abc.com", true, "Admin", "Ofoedu", false, null, null, "admin@abc.com", "AQAAAAIAAYagAAAAEFzJ40o7lQNEUCRVbwIBFgFBv3h67Ne1nTc1BIx7wKMF5Laoacn4RorXqm+4wcYjfw==", null, false, "63e56453-0ac4-4833-9809-cf479e301976", false, "admin@abc.com" });
+                values: new object[] { "1", 0, "76e36071-6172-4d56-ac2d-3079840785b0", "admin@abc.com", true, "Admin", "User", false, null, null, "admin@abc.com", "AQAAAAIAAYagAAAAEKo3rLIbGh4K/gl/a3ZDHcwfppdx/mW3RUFyOuKlV9+5AfURA6N7l18+iH94aVpiFQ==", null, false, "e341230a-935e-4af1-94ff-f7c617b79a21", false, "admin@abc.com" });
+
+            migrationBuilder.InsertData(
+                table: "cVStatuscs",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Pending" },
+                    { 2, "Approved" },
+                    { 3, "Decline" }
+                });
 
             migrationBuilder.InsertData(
                 table: "categories",
@@ -306,16 +315,6 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 {
                     { 1, "IT" },
                     { 2, "testcat" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "cvStatus",
-                columns: new[] { "Id", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Pending" },
-                    { 2, "Approved" },
-                    { 3, "Decline" }
                 });
 
             migrationBuilder.InsertData(
@@ -397,13 +396,13 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "cvStatus");
+                name: "cVStatuscs");
 
             migrationBuilder.DropTable(
                 name: "JobJobSeekers");
 
             migrationBuilder.DropTable(
-                name: "jobJobSeekersCVStatus");
+                name: "jobJobSeekersCVStatuses");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

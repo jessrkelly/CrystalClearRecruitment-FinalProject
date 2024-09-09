@@ -3,20 +3,23 @@
 }
 
 /* Page Header */
-.page-header {
+.page-header 
+{
     background: #4b0082;
     color: white;
     padding: 2em 0;
     text-align: center;
 }
 
-    .page-header h1, .page-header h2 {
+    .page-header h1, .page-header h2
+    {
         margin: 0;
         font-size: 2.5em;
     }
 
 /* Form and Container Styles */
-.form-container, .table-container {
+.form-container, .table-container
+{
     margin-top: 2em;
     padding: 2em;
     background: white;
@@ -30,7 +33,8 @@
 .button-warning,
 .button-primary,
 .button-danger,
-.button-profile {
+.button-profile
+{
     border: none;
     color: #fff;
     padding: 0.8em 1.6em;
@@ -39,59 +43,85 @@
     text-decoration: none;
     display: inline-block;
     transition: background 0.3s, color 0.3s;
-    position: relative; /* Ensure button is properly positioned */
+    position: relative; 
     z-index: 10; /* Ensure button appears above any overlapping content */
     visibility: visible; /* Ensure button is visible */
 }
 
 /* Specific Button Colors */
-.button-info, .button-primary {
-    background: #4b0082; /* Default purple buttons */
+.button-info, .button-primary
+{
+    background: #4b0082; 
 }
 
 .button-warning {
     background: #4b0082; /* Purple background */
-    border: 2px solid #4b0082; /* Purple border */
+    border: 2px solid #4b0082; 
     color: #fff;
-    padding: 0.5em 1.2em; /* Slightly smaller padding */
-    font-size: 0.9em; /* Slightly smaller font size */
-    border-radius: 0.5em; /* Keep rounded corners */
+    padding: 0.5em 1.2em;
+    font-size: 0.9em; 
+    /* Keep rounded corners */
+    border-radius: 0.5em;
     display: inline-block;
-    transition: background 0.3s, color 0.3s, border-color 0.3s; /* Add smooth transition for hover effects */
+    /* Add smooth transition for hover effects */
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
 
-.button-success {
+.button-success
+{
     background: #28a745; /* Green for Approve */
+    margin-top: 1.5em; /* Added space between button and input field */
+    padding: 0.8em 1.6em;
+    font-size: 1em;
+    border-radius: 0.5em;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+    z-index: 10;
+    visibility: visible;
 }
 
-.button-danger {
+    .button-success:hover 
+    {
+        background: #218838;
+    }
+.button-danger
+{
     background: #dc3545; /* Red for Decline */
 }
 
-.button-profile {
-    background: #6f42c1; /* Purple for View Profile */
+
+.button-profile 
+{
+    background: #6f42c1; /*Purple for view profile*/
 }
 
 /* Hover States */
 .button-info:hover,
-.button-primary:hover {
+.button-primary:hover 
+{
     background: #3a006d;
 }
 
-.button-success:hover {
+.button-success:hover
+{
     background: #218838;
 }
 
-.button-danger:hover {
+.button-danger:hover
+{
     background: #c82333;
 }
 
-.button-profile:hover {
+.button-profile:hover
+{
     background: #5a32a8;
 }
 
-.button-warning:hover {
+.button-warning:hover 
+{
     background: #3a006d;
     border-color: #3a006d;
     color: #fff;
@@ -108,34 +138,40 @@
 }
 
 /* Button Sizes */
-.button-sm {
+.button-sm
+{
     padding: 0.5em 1em;
     font-size: 0.9em;
 }
 
 /* Card Styles */
-.card {
+.card 
+{
     box-shadow: 0 1.25em 1.69em 0 rgba(0, 0, 0, 0.05);
     border-radius: 1em;
     margin-bottom: 1.25em;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-    .card:hover {
+    .card:hover
+    {
         box-shadow: 0 1.875em 2.5em 0 rgba(0, 0, 0, 0.1);
     }
 
-.card-body {
+.card-body
+{
     padding: 1.5em;
 }
 
-.card-header {
+.card-header 
+{
     display: flex;
     align-items: center;
     margin-bottom: 1em;
 }
 
-.avatar-text {
+.avatar-text 
+{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,12 +185,14 @@
 }
 
 /* Table Styles */
-.table {
+.table 
+{
     width: 100%;
     border-collapse: collapse;
 }
 
-    .table th, .table td {
+    .table th, .table td 
+    {
         vertical-align: middle;
         border: 0.1em solid #dee2e6;
         padding: 1em;
@@ -166,17 +204,20 @@
 }
 
 /* Badge Styles */
-.badge-secondary {
+.badge-secondary 
+{
     background-color: #6c757d;
     margin-right: 0.3em;
 }
 
-.badge-success {
+.badge-success
+{
     background-color: #28a745;
 }
 
 /* Search Section */
-.search-section {
+.search-section 
+{
     background: #4b0082;
     padding: 1.25em;
     text-align: center;
@@ -188,14 +229,17 @@
     justify-content: center;
 }
 
-    .search-section form {
+
+    .search-section form 
+    {
         display: flex;
         justify-content: center;
         width: 100%;
         max-width: 75em;
     }
 
-    .search-section input {
+    .search-section input 
+    {
         padding: 0.625em;
         margin: 0.3em;
         flex: 1;
@@ -205,7 +249,8 @@
         background: white;
     }
 
-    .search-section button {
+    .search-section button 
+    {
         padding: 0.625em;
         margin: 0.3em;
         border-radius: 0 1.25em 1.25em 0;
@@ -215,7 +260,8 @@
     }
 
 /* Hero Section */
-.hero {
+.hero
+{
     position: relative;
     background-image: url('/images/searchphoto2.jpg');
     background-size: cover;
@@ -228,7 +274,8 @@
     text-align: center;
 }
 
-.hero-overlay {
+.hero-overlay 
+{
     position: absolute;
     top: 0;
     left: 0;
@@ -237,35 +284,41 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
-.hero-content {
+
+.hero-content 
+{
     position: relative;
     z-index: 1;
 }
 
 /* Form Control Borders */
-.border-success {
+.border-success 
+{
     border-color: #4b0082 !important;
 }
 /* moving View button to right on job ad */
-.card-body .button-warning {
-    float: right; /* Align the button to the right */
-    margin-top: 1em; /* Add some spacing from the content above */
-}
+.card-body .button-warning 
+{
+    float: right; 
+    margin-top: 1em; 
 
 /* Job Seekers - Profile */
-.page-header {
+.page-header 
+{
     background: #4b0082;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
 
+
     .page-header h1 {
         margin: 0;
         font-size: 2.5rem;
     }
 
-.form-container {
+.form-container
+{
     margin-top: 20px;
     padding: 20px;
     background: white;
@@ -273,26 +326,56 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.btn-primary {
+.btn-primary 
+{
     background: #4b0082;
     border: none;
     color: #fff;
 }
 
-    .btn-primary:hover {
+    .btn-primary:hover 
+    {
         background: #3a006d;
     }
 
-.btn-secondary {
+.btn-secondary 
+{
     background: #6c757d;
     border: none;
     color: #fff;
 }
 
-    .btn-secondary:hover {
+    .btn-secondary:hover 
+    {
         background: #5a6268;
     }
 
-.border-success {
+.border-success
+{
     border-color: #4b0082 !important;
+}
+
+/* Responsive design- Default styles for ohone,tablet and desktop */
+
+
+@media (min-width: 600px) 
+{
+    html {
+        font-size: 0.9375em;
+    }
+}
+
+@media (min-width: 768px)
+{
+
+    html {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1024px) 
+{
+    html {
+        font-size: 1.0625em;
+    }
 }

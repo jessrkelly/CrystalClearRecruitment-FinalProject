@@ -44,8 +44,8 @@
                         <td>@Model[i].ContactNo</td>
                         <td>@Model[i].Salary</td>
                         <td>
-                            <a class="button-info button-sm" asp-action="edit" asp-route-id="@Model[i].JobID">Edit</a>
-                            <a class="button-danger button-sm" asp-action="delete" asp-route-id="@Model[i].JobID" onclick="return confirmDelete()">Delete</a>
+                            <a class="button-info button-sm" asp-action="edit" asp-route-id="@Model[i].JobId">Edit</a>
+                            <a class="button-danger button-sm" asp-action="delete" asp-route-id="@Model[i].JobId" onclick="return confirmDelete()">Delete</a>
                         </td>
                     </tr>
                 }
@@ -54,3 +54,5 @@
     </div>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

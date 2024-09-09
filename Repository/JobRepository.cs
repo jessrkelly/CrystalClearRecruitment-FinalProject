@@ -35,6 +35,7 @@ namespace CrystalClearRecruitment_FinalProject.Repository
 
         public void CVApproveDecline(int jobid, int appid, int jsid)
         {
+
             var data = new JobJobSeekersCVStatus
             {
                 jobId = jobid,
@@ -42,9 +43,9 @@ namespace CrystalClearRecruitment_FinalProject.Repository
                 jobSeekersId = jsid,
             };
 
-            if (_db.jobJobSeekersCVStatus.Where(x => x.jobId == jobid && x.jobSeekersId == jsid).Count() > 0)
+            if (_db.jobJobSeekersCVStatuses.Where(x => x.jobId == jobid && x.jobSeekersId == jsid).Count() > 0)
             {
-                _db.jobJobSeekersCVStatus.Remove(_db.jobJobSeekersCVStatus.Where(x => x.jobId == jobid && x.jobSeekersId == jsid).FirstOrDefault());
+                _db.jobJobSeekersCVStatuses.Remove(_db.jobJobSeekersCVStatuses.Where(x => x.jobId == jobid && x.jobSeekersId == jsid).FirstOrDefault());
             }
             _db.Add(data);
         }
@@ -94,14 +95,14 @@ namespace CrystalClearRecruitment_FinalProject.Repository
 
         public Job GetApplicationsbyJobs(int jobid)
         {
-            var data = _db.job.Include(x => x.jobSeekers).ThenInclude(x => x.appUsers).Include(x => x.categories).Where(x => x.JobID == jobid).AsQueryable().FirstOrDefault();
+            var data = _db.job.Include(x => x.jobSeekers).ThenInclude(x => x.appUsers).Include(x => x.categories).Where(x => x.JobId == jobid).AsQueryable().FirstOrDefault();
 
             var data2 = (from d1 in data.jobSeekers
 
-                         join jjsc in _db.jobJobSeekersCVStatus on d1.Id equals jjsc.jobSeekersId into temp
+                         join jjsc in _db.jobJobSeekersCVStatuses on d1.Id equals jjsc.jobSeekersId into temp
 
                          from jjsc1 in temp.DefaultIfEmpty()
-                         join aa in _db.cvStatus on jjsc1.cVStatusesId equals aa.Id
+                         join aa in _db.cVStatuscs on jjsc1.cVStatusesId equals aa.Id
                          where jjsc1.jobId == jobid
                          select new JobSeekers
                          {
@@ -147,10 +148,10 @@ namespace CrystalClearRecruitment_FinalProject.Repository
             {
                 foreach (var obj2 in d1.job)
                 {
-                    var status = _db.jobJobSeekersCVStatus.Where(x => x.jobSeekersId == d1.Id && x.jobId == obj2.JobID).AsQueryable();
+                    var status = _db.jobJobSeekersCVStatuses.Where(x => x.jobSeekersId == d1.Id && x.jobId == obj2.JobId).AsQueryable();
 
                     var data3 = (from d2 in status
-                                 join b in _db.cvStatus on d2.cVStatusesId equals b.Id
+                                 join b in _db.cVStatuscs on d2.cVStatusesId equals b.Id
                                  select new JobSeekers
                                  {
                                      appUsers = d1.appUsers,
@@ -164,7 +165,7 @@ namespace CrystalClearRecruitment_FinalProject.Repository
                                      FirstName = d1.FirstName,
 
                                      Id = d1.Id,
-                                     job = _db.job.Where(x => x.JobID == obj2.JobID).ToList(),
+                                     job = _db.job.Where(x => x.JobId == obj2.JobId).ToList(),
                                      LastName = d1.LastName,
                                      profileImage = d1.profileImage,
                                  }).FirstOrDefault();
@@ -207,12 +208,12 @@ namespace CrystalClearRecruitment_FinalProject.Repository
             return _db.job.Find(JobId);
         }
 
-        public List<Category> GetCategouries()
+        public List<Category> GetCategories()
         {
             return _db.categories.ToList();
         }
 
-        public Category GetCategouries(int id)
+        public Category GetCategories(int id)
         {
             return _db.categories.Where(x => x.CategoryId == id).FirstOrDefault();
         }

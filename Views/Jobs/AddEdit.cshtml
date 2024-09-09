@@ -17,7 +17,7 @@
         <form asp-action="@ViewBag.action">
             <input asp-for="PostedDate" hidden />
             <input asp-for="Status" hidden />
-            <input asp-for="JobID" hidden />
+            <input asp-for="JobId" hidden />
             <input asp-for="AddUser" hidden />
 
             <div class="row">
@@ -104,7 +104,7 @@
                 {
                     <div class="col-md-6">
                         <label>&nbsp;</label> <!-- To align with the above input -->
-                        <a class="button-primary form-control" asp-action="Apply" asp-route-jobid="@Model.JobID">Apply</a>
+                        <a class="button-primary form-control" asp-action="Apply" asp-route-jobid="@Model.JobId">Apply</a>
                     </div>
                 }
             </div>
@@ -128,3 +128,5 @@
     </div>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>

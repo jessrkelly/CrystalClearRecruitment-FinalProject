@@ -28,7 +28,7 @@ namespace CrystalClearRecruitment_FinalProject.Controllers
 
         public IActionResult Category()
         {
-            var data = _jobRepository.GetCategouries();
+            var data = _jobRepository.GetCategories();
             return View(data);
         }
 

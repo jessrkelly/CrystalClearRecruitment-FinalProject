@@ -7,6 +7,9 @@ namespace CrystalClearRecruitment_FinalProject.Models
     //With ref to the diff type of users 
     public class ApplicationDbContext : IdentityDbContext<AppUsers>
     {
+        internal object cvStatus;
+        internal IEnumerable<object> jobJobSeekersCVStatus;
+
         //Constructor
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -21,8 +24,8 @@ namespace CrystalClearRecruitment_FinalProject.Models
         public DbSet<Job> job { get; set; }
         public DbSet<Category> categories { get; set; }
         public DbSet<JobSeekers> jobSeekers { get; set; }
-        public DbSet<CVStatus> cvStatus { get; set; }
-        public DbSet<JobJobSeekersCVStatus> jobJobSeekersCVStatus { get; set; }
+        public DbSet<CVStatus> cVStatuscs { get; set; }
+        public DbSet<JobJobSeekersCVStatus> jobJobSeekersCVStatuses { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -56,7 +59,7 @@ namespace CrystalClearRecruitment_FinalProject.Models
                 Email = "admin@abc.com",
                 EmailConfirmed = true,
                 FirstName = "Admin",
-                LastName = "Ofoedu",
+                LastName = "User",
                 UserName = "admin@abc.com",
 
 

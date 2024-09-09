@@ -19,8 +19,8 @@ namespace CrystalClearRecruitment_FinalProject.Repository
         void CVApproveDecline(int jobid, int appid, int jsid);
         Job GetbyJobID(int JobId);
 
-        List<Category> GetCategouries();
-        Category GetCategouries(int id);
+        List<Category> GetCategories();
+        Category GetCategories(int id);
 
         void Save();
     }

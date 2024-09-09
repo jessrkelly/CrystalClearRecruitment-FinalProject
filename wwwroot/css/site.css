@@ -1,53 +1,81 @@
-html {
-    font-size: 14px;
+/* Looks after my layout such as banner and footer  */
+
+html
+{
+    font-size: 0.875em;
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus 
+{
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
+html
+{
     position: relative;
     min-height: 100%;
 }
 
-body {
+body 
+{
     margin-bottom: 60px;
     background-color: #9E9E9E;
 }
 
-.navbar-brand {
+.navbar-brand
+{
     font-weight: bold;
     font-size: 1.5rem;
     display: flex;
     align-items: center;
 }
 
-    .navbar-brand img {
-        height: 40px;
-        margin-right: 10px;
+    .navbar-brand img 
+    {
+        height: 2.5em;
+        margin-right: 0.625em;
     }
 
-.nav-link {
+.nav-link 
+{
     font-size: 1.1rem;
 }
 
-.btn-outline-primary {
-    border-radius: 20px;
-    margin-left: 10px;
+.btn-outline-primary
+{
+    border-radius: 1.25em;
+    margin-left: 0.625em;
 }
 
-footer {
-    background-color: #f8f9fa; /* Optional: background color for the footer */
-    padding: 10px 0; /* Optional: some padding for spacing */
+footer 
+{
+    background-color: #f8f9fa;
+    padding: 0.625em 0;
 }
 
-    footer .container {
-        text-align: center; /* This ensures all content inside the container is centered */
+footer .container 
+{
+    text-align: center;
+}
+
+/* Responsive design- Default styles for ohone,tablet and desktop */
+
+
+@media (min-width: 600px) {
+    html {
+        font-size: 0.9375em;
     }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1024px) {
+    html {
+        font-size: 1.0625em;
+    }
+}

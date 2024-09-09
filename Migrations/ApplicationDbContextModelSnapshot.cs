@@ -99,16 +99,16 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ac79ddee-248d-4557-8848-60c92a38186d",
+                            ConcurrencyStamp = "76e36071-6172-4d56-ac2d-3079840785b0",
                             Email = "admin@abc.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
-                            LastName = "Ofoedu",
+                            LastName = "User",
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@abc.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFzJ40o7lQNEUCRVbwIBFgFBv3h67Ne1nTc1BIx7wKMF5Laoacn4RorXqm+4wcYjfw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKo3rLIbGh4K/gl/a3ZDHcwfppdx/mW3RUFyOuKlV9+5AfURA6N7l18+iH94aVpiFQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "63e56453-0ac4-4833-9809-cf479e301976",
+                            SecurityStamp = "e341230a-935e-4af1-94ff-f7c617b79a21",
                             TwoFactorEnabled = false,
                             UserName = "admin@abc.com"
                         });
@@ -128,7 +128,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("cvStatus");
+                    b.ToTable("cVStatuscs");
 
                     b.HasData(
                         new
@@ -179,17 +179,13 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
 
             modelBuilder.Entity("CrystalClearRecruitment_FinalProject.Models.Job", b =>
                 {
-                    b.Property<int>("JobID")
+                    b.Property<int>("JobId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JobID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JobId"));
 
                     b.Property<string>("AddUser")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CVstatus")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CategoryId")
@@ -240,7 +236,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                     b.Property<int?>("Status")
                         .HasColumnType("int");
 
-                    b.HasKey("JobID");
+                    b.HasKey("JobId");
 
                     b.HasIndex("CategoryId");
 
@@ -266,7 +262,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("jobJobSeekersCVStatus");
+                    b.ToTable("jobJobSeekersCVStatuses");
                 });
 
             modelBuilder.Entity("CrystalClearRecruitment_FinalProject.Models.JobSeekers", b =>
@@ -319,13 +315,13 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
 
             modelBuilder.Entity("JobJobSeekers", b =>
                 {
-                    b.Property<int>("JobID")
+                    b.Property<int>("JobId")
                         .HasColumnType("int");
 
                     b.Property<int>("jobSeekersId")
                         .HasColumnType("int");
 
-                    b.HasKey("JobID", "jobSeekersId");
+                    b.HasKey("JobId", "jobSeekersId");
 
                     b.HasIndex("jobSeekersId");
 
@@ -428,12 +424,10 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -477,12 +471,10 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -518,7 +510,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                 {
                     b.HasOne("CrystalClearRecruitment_FinalProject.Models.Job", null)
                         .WithMany()
-                        .HasForeignKey("JobID")
+                        .HasForeignKey("JobId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
@@ -18,12 +18,12 @@ using CrystalClearRecruitment_FinalProject.Models;
 
 namespace CrystalClearRecruitment_FinalProject.Areas.Identity.Pages.Account
 {
-    public class LoginModel : PageModel
+    public class LogModel : PageModel
     {
         private readonly SignInManager<AppUsers> _signInManager;
-        private readonly ILogger<LoginModel> _logger;
+        private readonly ILogger<LogModel> _logger;
 
-        public LoginModel(SignInManager<AppUsers> signInManager, ILogger<LoginModel> logger)
+        public LogModel(SignInManager<AppUsers> signInManager, ILogger<LogModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;

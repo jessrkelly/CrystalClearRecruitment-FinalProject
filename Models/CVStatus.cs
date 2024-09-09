@@ -1,4 +1,5 @@
-﻿namespace CrystalClearRecruitment_FinalProject.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace CrystalClearRecruitment_FinalProject.Models
 {
     public class CVStatus
     {
