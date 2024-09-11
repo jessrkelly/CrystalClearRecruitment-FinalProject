@@ -1,5 +1,6 @@
 ﻿using CrystalClearRecruitment_FinalProject.Models;
 
+//With reference to my IProfilerep (allows to get profile,add,update and save)
 namespace CrystalClearRecruitment_FinalProject.Repository
 {
     public interface IProfileRepository

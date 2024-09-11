@@ -1,5 +1,6 @@
 ﻿using CrystalClearRecruitment_FinalProject.Models;
 
+//all job info updates etc
 namespace CrystalClearRecruitment_FinalProject.Repository
 {
     public interface IJobRepository

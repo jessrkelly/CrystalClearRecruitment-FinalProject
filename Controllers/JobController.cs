@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+//This controllor manages all the Job aspects (Job,Category, Job search - CRUD actions). It will retrieve the views for the different requests made.
 namespace CrystalClearRecruitment_FinalProject.Controllers
 {
     [Authorize]
@@ -167,6 +168,7 @@ namespace CrystalClearRecruitment_FinalProject.Controllers
             return View("AddEdit");
         }
 
+        //If an admin posts a job only cn be seen on their account. (Prevenint another admin from CRUD that poost)
         [HttpPost]
         public IActionResult AddPOST(Job model)
         {

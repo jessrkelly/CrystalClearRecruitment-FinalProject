@@ -1,4 +1,5 @@
 ﻿using CrystalClearRecruitment_FinalProject.Models;
+//Referal to CRUD of category
 
 namespace CrystalClearRecruitment_FinalProject.Repository
 {

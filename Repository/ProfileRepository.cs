@@ -1,6 +1,7 @@
 ﻿using CrystalClearRecruitment_FinalProject.Models;
 using Microsoft.EntityFrameworkCore;
 
+//Profile Repo will interact with my DB, Add JS profile, gets a profile by ID, saves and updates changes to DB
 namespace CrystalClearRecruitment_FinalProject.Repository
 {
     public class ProfileRepository : IProfileRepository

@@ -2,6 +2,7 @@
 
 namespace CrystalClearRecruitment_FinalProject.Models
 {
+    //Cat ID and name 
     public class Category
     {
         public int CategoryId { get; set; }

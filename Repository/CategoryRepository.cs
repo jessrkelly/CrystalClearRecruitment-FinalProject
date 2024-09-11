@@ -1,5 +1,5 @@
 ﻿using CrystalClearRecruitment_FinalProject.Models;
-
+//Will CRUD catagoury to the DB
 namespace CrystalClearRecruitment_FinalProject.Repository
 {
     public class CategoryRespository : ICategoryRespository

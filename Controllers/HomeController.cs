@@ -1,7 +1,7 @@
 using CrystalClearRecruitment_FinalProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-
+//My general home controller.
 namespace CrystalClearRecruitment_FinalProject.Controllers
 {
     public class HomeController : Controller

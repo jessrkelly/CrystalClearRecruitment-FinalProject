@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
+//This model will handle all the JobSeeker interactions (Adding Cv, CU Profile, saving cv to my root folder)
+//Added in later in project the feature to GetProfile for an admin when viewing the applications.
+
 namespace CrystalClearRecruitment_FinalProject.Controllers
 {
     [Authorize]
@@ -108,8 +111,6 @@ namespace CrystalClearRecruitment_FinalProject.Controllers
 
                 model.CVPath = LocalPath;
             }
-
-
 
             AppUsers user = _appUser.GetUserAsync(User).Result;
             var data = _profileRepository.GetProfile(User.Identity.Name);

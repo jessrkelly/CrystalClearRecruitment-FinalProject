@@ -1,5 +1,6 @@
 ﻿namespace CrystalClearRecruitment_FinalProject.Models
 {
+    //Will handle the CV status
     public class JobJobSeekersCVStatus
     {
         public int Id { get; set; }

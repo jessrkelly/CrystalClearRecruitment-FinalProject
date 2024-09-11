@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+//Define tables for my project - jobs/cetgories/js/CV status etc
+//Seed data into DB - roles for each user (admin/JS) - user auth
 
 namespace CrystalClearRecruitment_FinalProject.Models
 {
@@ -31,9 +33,8 @@ namespace CrystalClearRecruitment_FinalProject.Models
         {
             base.OnModelCreating(builder);
             //this.SeedUsers(builder);
-            //	this.SeedUserRoles(builder);
 
-
+            //Admin =1 / JS = 2
             builder.Entity<IdentityRole>().HasData(new IdentityRole
             {
                 Name = "admin",
@@ -66,11 +67,11 @@ namespace CrystalClearRecruitment_FinalProject.Models
                 NormalizedUserName = "admin@abc.com"
             };
 
-            //set user password
+            //set admin password
             PasswordHasher<AppUsers> ph = new PasswordHasher<AppUsers>();
             appUser.PasswordHash = ph.HashPassword(appUser, "Abc.123456");
 
-            //seed user
+            //seed admin
             builder.Entity<AppUsers>().HasData(appUser);
 
             //set user role to admin
@@ -80,18 +81,19 @@ namespace CrystalClearRecruitment_FinalProject.Models
                 UserId = "1"
             });
 
-            builder.Entity<Category>().HasData(new Category
-            {
-                CategoryId = 1,
-                Name = "IT",
-            },
+//Removed for live
+//builder.Entity<Category>().HasData(new Category
+// {
+//    CategoryId = 1,
+//     Name = "IT",
+//},
 
-               new Category
-               {
-                   CategoryId = 2,
-                   Name = "testcat",
-               }
-               );
+//   new Category
+//   {
+//     CategoryId = 2,
+//     Name = "testcat",
+// }
+// );
 
 
             builder.Entity<CVStatus>().HasData(

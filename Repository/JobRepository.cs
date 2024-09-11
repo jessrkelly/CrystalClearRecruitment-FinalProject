@@ -1,6 +1,6 @@
 ﻿using CrystalClearRecruitment_FinalProject.Models;
 using Microsoft.EntityFrameworkCore;
-
+//Unlike Job Controller the job repo will interact with the requests (same as J cont) but will interact with my DB as opposed to views. 
 namespace CrystalClearRecruitment_FinalProject.Repository
 {
     public class JobRepository : IJobRepository

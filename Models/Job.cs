@@ -5,7 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CrystalClearRecruitment_FinalProject.Models
 {
     //Job Model will handel all info of Jobs - ID, Job Title, Salary etc. 
-    //It will then handle a User that will be associated with the creation of the job.It will also hold nav for the Job seekers who may apply for a Job.
+    //It will then handle a Admin that will be associated with the creation of that job.It will also hold nav for the Job seekers who may apply for a Job.
+    //for example if there are two admins - the admin who added the job is the only one who can CRUD that added job
     public class Job
     {
         public int JobId { get; set; }  
