@@ -1,0 +1,3 @@
+Crystal Clear Recruitment: A recruitment website, with real time application updates.
+Crystal Clear Recruitment is an online platform designed to connect job seekers with potential employers. The website offers real-time updates on job applications, allowing job seekers to search for opportunities, access interview tips, and learn more about the recruitment process.
+For admins, the platform provides tools to review applications, manage job seeker profiles, and respond to applications with 'approve', 'decline', or leave them 'pending'. Job seekers can also update their profiles with the latest information, including their interests, profile picture, and an up-to-date CV, making the application process seamless and efficient.
