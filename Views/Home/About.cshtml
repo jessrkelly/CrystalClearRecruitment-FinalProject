@@ -109,3 +109,13 @@
 <!-- Controls the Drop Down -->
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Disable flip functionality on mobile (less than 480px)
+    if (window.innerWidth < 480) {
+        // Disable flip functionality by removing event listeners
+        const flipCards = document.querySelectorAll('.flip-card-inner');
+        flipCards.forEach(card => {
+            card.style.pointerEvents = 'none'; // Disable any interactions
+        });
+    }
+</script>

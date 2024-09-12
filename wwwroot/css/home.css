@@ -276,3 +276,81 @@ h5 {
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Responsive design for Tablet/Phone */
+/* Responsive Styling */
+
+/* Tablet View */
+@media (max-width: 768px) {
+    .interview-content-container,
+    .on-day-of-interview .content-container {
+        flex-direction: column;
+    }
+
+    .accordion-section,
+    .tips-section {
+        width: 100%;
+    }
+
+    .flip-card {
+        height: 15em;
+    }
+
+    .display-4 {
+        font-size: 2em;
+    }
+
+    .lead {
+        font-size: 1.1em;
+    }
+
+    .interview-hero {
+        height: 20em;
+    }
+}
+
+/* Mobile View */
+/*I'm aware my flip card won't stay put on tablet/mobile. Tried multiple CSS hacks and even jQuery in about us page to stop flip if >768px but to no avail. */
+@media (max-width: 480px) 
+{
+    .interview-content-container,
+    .on-day-of-interview .content-container 
+    {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .accordion-section,
+    .tips-section 
+    {
+        width: 100%;
+        padding: 1em;
+    }
+
+    .flip-card 
+    {
+        height: 12em;
+    }
+
+    .display-4 {
+        font-size: 1.75em;
+    }
+
+    .lead {
+        font-size: 1em;
+    }
+
+    .interview-hero {
+        height: 15em;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .card-header {
+        padding: 0.75em;
+    }
+
+    .card-body {
+        padding: 0.5em;
+    }
+}
