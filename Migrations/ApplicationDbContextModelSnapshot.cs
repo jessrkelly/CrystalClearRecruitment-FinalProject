@@ -99,16 +99,16 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "76e36071-6172-4d56-ac2d-3079840785b0",
+                            ConcurrencyStamp = "912cc8b3-185e-4a3e-9aab-48c66b6358d8",
                             Email = "admin@abc.com",
                             EmailConfirmed = true,
                             FirstName = "Admin",
                             LastName = "User",
                             LockoutEnabled = false,
                             NormalizedUserName = "admin@abc.com",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKo3rLIbGh4K/gl/a3ZDHcwfppdx/mW3RUFyOuKlV9+5AfURA6N7l18+iH94aVpiFQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEgfTxg+N8hrZvqnsnRo7gQBdw3WMHiPNdDPNSpxi9kL8e37gfmyO3ZTQxDlf6l+dw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e341230a-935e-4af1-94ff-f7c617b79a21",
+                            SecurityStamp = "76032371-b80c-462b-9f2d-7ccf8bc2b79e",
                             TwoFactorEnabled = false,
                             UserName = "admin@abc.com"
                         });
@@ -163,18 +163,6 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("categories");
-
-                    b.HasData(
-                        new
-                        {
-                            CategoryId = 1,
-                            Name = "IT"
-                        },
-                        new
-                        {
-                            CategoryId = 2,
-                            Name = "testcat"
-                        });
                 });
 
             modelBuilder.Entity("CrystalClearRecruitment_FinalProject.Models.Job", b =>

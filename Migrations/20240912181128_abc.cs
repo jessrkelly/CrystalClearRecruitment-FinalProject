@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace CrystalClearRecruitment_FinalProject.Migrations
 {
     /// <inheritdoc />
-    public partial class CrystalClearRec : Migration
+    public partial class abc : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -296,7 +296,7 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "1", 0, "76e36071-6172-4d56-ac2d-3079840785b0", "admin@abc.com", true, "Admin", "User", false, null, null, "admin@abc.com", "AQAAAAIAAYagAAAAEKo3rLIbGh4K/gl/a3ZDHcwfppdx/mW3RUFyOuKlV9+5AfURA6N7l18+iH94aVpiFQ==", null, false, "e341230a-935e-4af1-94ff-f7c617b79a21", false, "admin@abc.com" });
+                values: new object[] { "1", 0, "912cc8b3-185e-4a3e-9aab-48c66b6358d8", "admin@abc.com", true, "Admin", "User", false, null, null, "admin@abc.com", "AQAAAAIAAYagAAAAEEgfTxg+N8hrZvqnsnRo7gQBdw3WMHiPNdDPNSpxi9kL8e37gfmyO3ZTQxDlf6l+dw==", null, false, "76032371-b80c-462b-9f2d-7ccf8bc2b79e", false, "admin@abc.com" });
 
             migrationBuilder.InsertData(
                 table: "cVStatuscs",
@@ -306,15 +306,6 @@ namespace CrystalClearRecruitment_FinalProject.Migrations
                     { 1, "Pending" },
                     { 2, "Approved" },
                     { 3, "Decline" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "categories",
-                columns: new[] { "CategoryId", "Name" },
-                values: new object[,]
-                {
-                    { 1, "IT" },
-                    { 2, "testcat" }
                 });
 
             migrationBuilder.InsertData(
