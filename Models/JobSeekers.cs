@@ -8,6 +8,7 @@ namespace CrystalClearRecruitment_FinalProject.Models
 {
     public class JobSeekers
     {
+        //My int ID here is the PK
         public int Id { get; set; }
         public string? profileImage { get; set; }
         public string appUsersId { get; set; }

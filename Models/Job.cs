@@ -9,6 +9,7 @@ namespace CrystalClearRecruitment_FinalProject.Models
     //for example if there are two admins - the admin who added the job is the only one who can CRUD that added job
     public class Job
     {
+        //PK
         public int JobId { get; set; }  
         public string JobTitle { get; set; }
         public int Salary { get; set; }
@@ -25,6 +26,8 @@ namespace CrystalClearRecruitment_FinalProject.Models
         public string Country { get; set; }
         public DateTime PostedDate { get; set; }
 
+        //This isn't mapped because CV status will only apply if you have applied for job/if the application has been reviews/if a reponse from Admin
+        //Therefore I felt it was uncessisary to store it within my DB
         [NotMapped]
         public string CVStatus { get; set; }    
 

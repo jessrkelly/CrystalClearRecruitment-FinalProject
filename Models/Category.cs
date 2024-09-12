@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-
+﻿
 namespace CrystalClearRecruitment_FinalProject.Models
 {
     //Cat ID and name 
     public class Category
     {
+        //ID = PK
         public int CategoryId { get; set; }
         public string Name { get; set; }
 
