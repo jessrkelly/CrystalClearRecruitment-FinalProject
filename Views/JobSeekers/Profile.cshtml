@@ -177,17 +177,17 @@
                             <!-- Submit and Cancel Buttons -->
                             @if (User.FindFirstValue(ClaimTypes.NameIdentifier) == Model.appUsersId.ToString())
                             {
-                                <div class="text-right">
-                                    <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("Index", "Home")'">Cancel</button>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                <div class="button-container">
+                                    <button type="button" class="btn button-danger" onclick="window.location.href='@Url.Action("Index", "Home")'">Cancel</button>
+                                    <button type="submit" class="btn button-primary">Update</button>
                                 </div>
                             }
 
                             <!-- Back to Applications button for Admins -->
                             @if (User.IsInRole("admin"))
                             {
-                                <div class="text-right mt-3">
-                                    <a class="btn btn-primary" asp-action="JobCvs" asp-controller="Jobs">Back to Applications</a>
+                                <div class="button-container mt-3">
+                                    <a class="btn button-danger" asp-action="JobCvs" asp-controller="Jobs">Back to Applications</a>
                                 </div>
                             }
                         </div>

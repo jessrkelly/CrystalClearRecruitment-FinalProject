@@ -49,9 +49,9 @@
 }
 
 /* Specific Button Colors */
-.button-info, .button-primary
-{
-    background: #4b0082; 
+.button-info, .button-primary {
+    background: #4b0082;
+    padding: 0.5em;
 }
 
 .button-warning {
@@ -66,10 +66,12 @@
     /* Add smooth transition for hover effects */
     transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
+.button-container {
+    text-align: right;
+    padding: 0.5em;
+}
 
-
-.button-success
-{
+.button-success {
     background: #28a745; /* Green for Approve */
     margin-top: 1.5em; /* Added space between button and input field */
     padding: 0.8em 1.6em;
@@ -90,6 +92,7 @@
 .button-danger
 {
     background: #dc3545; /* Red for Decline */
+
 }
 
 

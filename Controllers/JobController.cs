@@ -3,6 +3,8 @@ using CrystalClearRecruitment_FinalProject.Models;
 using CrystalClearRecruitment_FinalProject.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 //This controllor manages all the Job aspects (Job,Category, Job search - CRUD actions). It will retrieve the views for the different requests made.
@@ -129,6 +131,9 @@ namespace CrystalClearRecruitment_FinalProject.Controllers
             return View("applications", data);
         }
 
+        //Updated Apply to catch any duplicate applications for JS.
+        // If job App is 2nd then you'll be redirected to Home page
+        // If new app then job request handeled and reutned to Home Page
         public IActionResult Apply(int jobid)
         {
             var username = User.Identity.Name;
@@ -138,10 +143,31 @@ namespace CrystalClearRecruitment_FinalProject.Controllers
             {
                 return RedirectToAction("Profile", "jobseekers");
             }
-            _jobRepository.Apply(jobid, username);
-            _jobRepository.Save();
-            return RedirectToAction("seek");
+
+            try
+            {
+                _jobRepository.Apply(jobid, username);
+                _jobRepository.Save();
+            }
+            catch (DbUpdateException ex)
+            {
+                //Assuming the exception is due to a primary key violation or duplicate entry - as shown in OG error
+                if (ex.InnerException is SqlException sqlEx && sqlEx.Number == 2627) 
+                {
+                    //Set TempData to indicate a duplicate application
+                    TempData["Error"] = "You have already applied for this job.";
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    throw; // If it's not a duplicate error, rethrow the exception
+                }
+            }
+
+            TempData["Message"] = "Your application has been submitted successfully!";
+            return RedirectToAction("Seek");
         }
+
 
         [AllowAnonymous]
         [HttpPost]
